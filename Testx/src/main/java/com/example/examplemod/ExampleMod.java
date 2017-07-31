@@ -34,6 +34,7 @@ public class ExampleMod
     public void init(FMLInitializationEvent event)
     {
         // some example code
+//        proxy.registerEntities();
 //        proxy.registerEntityRenderer();
         ModEntities.generateSpawnEgg();
         System.out.println("DIRT BLOCK >> "+Blocks.DIRT.getUnlocalizedName());

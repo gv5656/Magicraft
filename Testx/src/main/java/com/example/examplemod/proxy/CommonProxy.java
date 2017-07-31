@@ -22,12 +22,13 @@ public class CommonProxy {
     }
 
     public void registerEntities(){
-        comProxEntityRegister(EntityMyegg.class,"egg");
+        comProxEntityRegister(EntityMyegg.class,"myegg");
         comProxEntityRegister(EntityWoc.class,"woc");
+
     }
 
     public void comProxEntityRegister(Class entityClass, String name){
-        EntityRegistry.registerModEntity(entityClass, name, counter++, ExampleMod.instance, 16 * 4, 3, true);
+        EntityRegistry.registerModEntity(entityClass, name, counter++, ExampleMod.instance, 16 * 4, 1, true);
 
     }
 

@@ -29,6 +29,7 @@ public class ItemSpawn extends ItemBase{
         {
 
             EntityWoc entityWoc = new EntityWoc(worldIn);
+            entityWoc.setPosition(playerIn.posX,playerIn.posY,playerIn.posZ);
             worldIn.spawnEntityInWorld(entityWoc);
             System.out.println("WOC spawned!");
         }

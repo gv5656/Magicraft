@@ -23,7 +23,7 @@ public abstract class MyEntityThrowable extends EntityThrowable{
 
     @Override
     public void onUpdate(){
-        System.out.println("I JUST Want TO PRINT!!!!!!!!!!!!!!!!!!!!!");
+//        System.out.println("I JUST Want TO PRINT!!!!!!!!!!!!!!!!!!!!!");
         super.onUpdate();
     }
 }

@@ -19,6 +19,9 @@ import net.minecraft.world.World;
 
 public class EntityMyegg extends MyEntityThrowable
 {
+
+    protected String name = "my_egg";
+
     public EntityMyegg(World worldIn)
     {
         super(worldIn);
