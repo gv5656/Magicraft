@@ -15,7 +15,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  * Created by pijie on 2017/7/31.
  */
 @SideOnly(Side.CLIENT)
-public class RenderEntityWoc extends RenderLiving<EntityCow>
+public class RenderEntityWoc extends RenderLiving<EntityWoc>
 {
     private static final ResourceLocation COW_TEXTURES = new ResourceLocation("textures/entity/cow/cow.png");
 
@@ -31,8 +31,13 @@ public class RenderEntityWoc extends RenderLiving<EntityCow>
     /**
      * Returns the location of an entity's texture. Doesn't seem to be called unless you call Render.bindEntityTexture.
      */
-    protected ResourceLocation getEntityTexture(EntityCow entity)
-    {
+//    protected ResourceLocation getEntityTexture(EntityCow entity)
+//    {
+//        return COW_TEXTURES;
+//    }
+
+    @Override
+    protected ResourceLocation getEntityTexture(EntityWoc entity) {
         return COW_TEXTURES;
     }
 }

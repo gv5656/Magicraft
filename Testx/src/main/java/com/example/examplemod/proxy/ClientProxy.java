@@ -42,12 +42,12 @@ public class ClientProxy extends CommonProxy{
             }
         });
 
-//        RenderingRegistry.registerEntityRenderingHandler(EntityWoc.class, new IRenderFactory<EntityWoc>() {
-//            @Override
-//            public Render<? super EntityWoc> createRenderFor(RenderManager manager) {
-//                return new RenderEntityWoc(manager);
-//            }
-//        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityWoc.class, new IRenderFactory<EntityWoc>() {
+            @Override
+            public Render<? super EntityWoc> createRenderFor(RenderManager manager) {
+                return new RenderEntityWoc(manager);
+            }
+        });
 
 //        RenderingRegistry.registerEntityRenderingHandler(EntityWoc.class, new RenderEntityWoc(Minecraft.getMinecraft().getRenderManager(), new ModelCow(), 0.5F));
 
