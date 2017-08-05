@@ -7,16 +7,15 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.StatList;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.EnumActionResult;
-import net.minecraft.util.EnumHand;
-import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.*;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -72,6 +71,25 @@ public class ItemFireWand extends ItemBase{
                     spawnParticle(d0+v0*3.5, d1+v1*3.5, d2+v2*3.5, v0, v1, v2, worldIn, (EntityPlayer)entityIn);
                 }
 
+            }
+
+
+            /**
+             * The following code handles the fire logic (apply fire damage)
+             */
+
+            AxisAlignedBB fireArea = new AxisAlignedBB(entityIn.posX-2+ptclMotionX*3, entityIn.posY+1+ptclMotionY*3, entityIn.posZ-2+ptclMotionZ*3,entityIn.posX+2+ptclMotionX*3,entityIn.posY+3+ptclMotionY*3,entityIn.posZ+2+ptclMotionZ*3);
+
+
+            if(!worldIn.isRemote){
+                List<EntityLivingBase> list = worldIn.<EntityLivingBase>getEntitiesWithinAABB(EntityLivingBase.class, fireArea);
+
+                if (!list.isEmpty()) {
+                    for (EntityLivingBase entitylivingbase : list) {
+                        entitylivingbase.attackEntityFrom(DamageSource.magic, (float)1);
+                        entitylivingbase.setFire(4);
+                    }
+                }
             }
         }
     }
