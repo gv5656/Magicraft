@@ -33,7 +33,7 @@ public class ItemEgga extends ItemBase{
         if (!worldIn.isRemote)
         {
             EntityMyegg entitymyegg = new EntityMyegg(worldIn, playerIn);
-            entitymyegg.setHeadingFromThrower(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 1.5F, 1.0F);
+            entitymyegg.setHeadingFromThrower(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 0.5F, 1.0F);
             worldIn.spawnEntityInWorld(entitymyegg);
         }
 

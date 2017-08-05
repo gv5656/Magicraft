@@ -17,7 +17,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderEntityWoc extends RenderLiving<EntityWoc>
 {
-    private static final ResourceLocation COW_TEXTURES = new ResourceLocation("textures/entity/cow/cow.png");
+//    private static final ResourceLocation COW_TEXTURES = new ResourceLocation("textures/entity/cow/cow.png");
+    private static final ResourceLocation COW_TEXTURES = new ResourceLocation("mgc:textures/entity/kaikai/mycowpig.png");
 
     public RenderEntityWoc(RenderManager renderManagerIn)
     {

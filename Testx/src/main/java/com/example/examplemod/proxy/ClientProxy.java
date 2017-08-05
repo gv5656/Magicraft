@@ -2,9 +2,11 @@ package com.example.examplemod.proxy;
 
 import com.example.examplemod.entity.Livings.EntityWoc;
 import com.example.examplemod.entity.projectile.EntityMyegg;
+import com.example.examplemod.init.ModItems;
 import com.example.examplemod.item.ItemEgga;
 import com.example.examplemod.rendering.RenderEntityMyegg;
 import com.example.examplemod.rendering.RenderEntityWoc;
+import com.example.examplemod.rendering.SimRenderSnowball;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.model.ModelCow;
@@ -57,7 +59,7 @@ public class ClientProxy extends CommonProxy{
         RenderingRegistry.registerEntityRenderingHandler(EntityMyegg.class, new IRenderFactory<EntityMyegg>() {
             @Override
             public Render<? super EntityMyegg> createRenderFor(RenderManager manager) {
-                return new RenderSnowball<EntityMyegg>(manager, Items.SNOWBALL,Minecraft.getMinecraft().getRenderItem());
+                return new SimRenderSnowball<EntityMyegg>(manager, ModItems.egga,Minecraft.getMinecraft().getRenderItem());
             }
         });
 

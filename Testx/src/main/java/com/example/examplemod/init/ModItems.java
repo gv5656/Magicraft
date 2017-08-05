@@ -1,6 +1,7 @@
 package com.example.examplemod.init;
 
 import com.example.examplemod.item.ItemEgga;
+import com.example.examplemod.item.ItemFireWand;
 import com.example.examplemod.item.ItemModelProvider;
 import com.example.examplemod.item.ItemSpawn;
 import net.minecraft.item.Item;
@@ -13,10 +14,12 @@ public class ModItems {
 
     public static ItemEgga egga;
     public static ItemSpawn spawn;
+    public static ItemFireWand fireWand;
 
     public static void init(){
         egga = register(new ItemEgga());
         spawn = register(new ItemSpawn());
+        fireWand = register(new ItemFireWand());
 
     }
 

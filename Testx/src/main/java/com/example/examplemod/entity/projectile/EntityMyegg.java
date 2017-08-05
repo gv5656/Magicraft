@@ -70,12 +70,22 @@ public class EntityMyegg extends MyEntityThrowable
 //            }
 //        }
 
-        double d0 = 0.08D;
+//        double d0 = 0.08D;
+
+        double d0 = this.posX;
+        double d1 = this.posY;
+        double d2 = this.posZ;
+
 
         for (int k = 0; k < 8; ++k)
         {
-            this.worldObj.spawnParticle(EnumParticleTypes.ITEM_CRACK, this.posX, this.posY, this.posZ, ((double)this.rand.nextFloat() - 0.5D) * 0.08D, ((double)this.rand.nextFloat() - 0.5D) * 0.08D, ((double)this.rand.nextFloat() - 0.5D) * 0.08D, new int[] {Item.getIdFromItem(Items.EGG)});
+            this.worldObj.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0, d1, d2, 0.0D, 0.0D, 0.0D, new int[0]);
+
+            this.worldObj.spawnParticle(EnumParticleTypes.FLAME, d0, d1, d2, 0.0D, 0.0D, 0.0D, new int[0]);
+            this.worldObj.spawnParticle(EnumParticleTypes.ITEM_CRACK, this.posX, this.posY, this.posZ, ((double)this.rand.nextFloat() - 0.5D) * 0.08D, ((double)this.rand.nextFloat() - 0.5D) * 0.08D, ((double)this.rand.nextFloat() - 0.5D) * 0.08D, new int[] {Item.getIdFromItem(Items.DIAMOND)});
         }
+
+
 
         if (!this.worldObj.isRemote && (result.typeOfHit == RayTraceResult.Type.BLOCK))
         {
