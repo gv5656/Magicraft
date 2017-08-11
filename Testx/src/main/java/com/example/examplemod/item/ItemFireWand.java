@@ -110,9 +110,14 @@ public class ItemFireWand extends ItemBase{
 
             Vector2d headingVector = new Vector2d(playerHeadingX, playerHeadingZ);
 
-            headingVector = headingVector.scaleWith(13);
+            /**
+             * scaleWith sets the length
+             * getPpdWithNorm sets the breadth
+             */
 
-            Vector2d change = headingVector.getPpdvWithNorm(1);
+            headingVector = headingVector.scaleWith(5);
+
+            Vector2d change = headingVector.getPpdvWithNorm(0.6);
             Vector2d result1 = headingVector.addWith(change);
             Vector2d result2 = headingVector.addWith(change.getNegativ());
 
@@ -240,21 +245,25 @@ public class ItemFireWand extends ItemBase{
 
 //        worldIn.spawnParticle(EnumParticleTypes.HEART,d00+headingVector.x,cbb.minY+1, d22+ headingVector.y,0,0,0,new int[0]);
 
-        worldIn.spawnParticle(EnumParticleTypes.HEART,cbb.A.x,cbb.minY+1, cbb.A.y,0,0,0,new int[0]);
-        worldIn.spawnParticle(EnumParticleTypes.HEART,cbb.B.x,cbb.minY+1, cbb.B.y,0,0,0,new int[0]);
-        worldIn.spawnParticle(EnumParticleTypes.HEART,cbb.C.x,cbb.minY+1, cbb.C.y,0,0,0,new int[0]);
-        worldIn.spawnParticle(EnumParticleTypes.HEART,cbb.D.x,cbb.minY+1, cbb.D.y,0,0,0,new int[0]);
 
-        worldIn.spawnParticle(EnumParticleTypes.HEART,cbb.A.x,cbb.minY+3, cbb.A.y,0,0,0,new int[0]);
-        worldIn.spawnParticle(EnumParticleTypes.HEART,cbb.B.x,cbb.minY+3, cbb.B.y,0,0,0,new int[0]);
-        worldIn.spawnParticle(EnumParticleTypes.HEART,cbb.C.x,cbb.minY+3, cbb.C.y,0,0,0,new int[0]);
-        worldIn.spawnParticle(EnumParticleTypes.HEART,cbb.D.x,cbb.minY+3, cbb.D.y,0,0,0,new int[0]);
+        /**
+         * The following code is used to test the Custom bounding box
+         */
+//        worldIn.spawnParticle(EnumParticleTypes.HEART,cbb.A.x,cbb.minY+1, cbb.A.y,0,0,0,new int[0]);
+//        worldIn.spawnParticle(EnumParticleTypes.HEART,cbb.B.x,cbb.minY+1, cbb.B.y,0,0,0,new int[0]);
+//        worldIn.spawnParticle(EnumParticleTypes.HEART,cbb.C.x,cbb.minY+1, cbb.C.y,0,0,0,new int[0]);
+//        worldIn.spawnParticle(EnumParticleTypes.HEART,cbb.D.x,cbb.minY+1, cbb.D.y,0,0,0,new int[0]);
+//
+//        worldIn.spawnParticle(EnumParticleTypes.HEART,cbb.A.x,cbb.minY+3, cbb.A.y,0,0,0,new int[0]);
+//        worldIn.spawnParticle(EnumParticleTypes.HEART,cbb.B.x,cbb.minY+3, cbb.B.y,0,0,0,new int[0]);
+//        worldIn.spawnParticle(EnumParticleTypes.HEART,cbb.C.x,cbb.minY+3, cbb.C.y,0,0,0,new int[0]);
+//        worldIn.spawnParticle(EnumParticleTypes.HEART,cbb.D.x,cbb.minY+3, cbb.D.y,0,0,0,new int[0]);
 
 
-            /*
+
             worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d00, d11, d22, v00, v11, v22, new int[0]);
             worldIn.spawnParticle(EnumParticleTypes.FLAME, d00, d11, d22, v00, v11, v22, new int[0]);
-            */
+
 
 //            worldIn.spawnParticle(EnumParticleTypes.FLAME, d00, d11, d22-0.5D, 0.5D, 0.0D, 0.0D, new int[0]);
 //            worldIn.spawnParticle(EnumParticleTypes.FLAME, d00, d11, d22+0.5D, 0.5D, 0.0D, 0.0D, new int[0]);
@@ -274,7 +283,10 @@ public class ItemFireWand extends ItemBase{
         float f1 = -MathHelper.sin((rotationPitchIn + pitchOffset) * 0.017453292F);
         float f2 = MathHelper.cos(rotationYawIn * 0.017453292F) * MathHelper.cos(rotationPitchIn * 0.017453292F);
 
-        System.out.println("SquareRoot is" + Math.sqrt(f*f+f1*f1+f2*f2));
+        /**
+         * used to check the directed unit vector
+         */
+        //System.out.println("SquareRoot is" + Math.sqrt(f*f+f1*f1+f2*f2));
 
         this.setThrowableHeading((double)f, (double)f1, (double)f2, velocity, inaccuracy);
         this.ptclMotionX += entityThrower.motionX;
@@ -300,7 +312,11 @@ public class ItemFireWand extends ItemBase{
         playerHeadingY = y;
         playerHeadingZ = z;
 
-        System.out.println("SquareRootF is" + f);
+        /**
+         * used to check the directed unit vector
+         */
+
+        //System.out.println("SquareRootF is" + f);
 
         x = x + this.rand.nextGaussian() * 0.007499999832361937D * (double)inaccuracy;
         y = y + this.rand.nextGaussian() * 0.007499999832361937D * (double)inaccuracy;
